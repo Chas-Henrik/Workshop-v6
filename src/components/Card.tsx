@@ -1,5 +1,5 @@
 import './Card.css'
-import React, { JSX, useState } from 'react';
+import React, { JSX } from 'react';
 
 export type CardProps = {
     id: number;
@@ -14,7 +14,7 @@ export type CardProps = {
 export function Card({id, showFront, imgFront, imgBack, canFlip, CardClickEvent}: CardProps): JSX.Element {
     const imgSrc = showFront ? imgFront : imgBack;
 
-    const ClickEventHandler: React.MouseEventHandler<HTMLImageElement> = (e: React.MouseEvent) => { 
+    const ClickEventHandler: React.MouseEventHandler<HTMLImageElement> = () => { 
         CardClickEvent(id);
     };
 
