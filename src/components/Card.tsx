@@ -3,37 +3,22 @@ import React, { JSX, useState } from 'react';
 
 export type CardProps = {
     id: number;
+    showFront: boolean;
     imgFront: string;
-    onFlipEvent: (id: number, flipped: boolean) => void;
-    flippable: boolean;
-    flip: boolean;
+    imgBack: string;
+    canFlip: boolean;
+    CardClickEvent: (id: number) => void;
 };
 
 
-export function Card({id, imgFront, onFlipEvent, flippable, flip}: CardProps): JSX.Element {
-    const imgBack = "/background.jpg";
-    const [cardId, setCardId] = useState<number>(id);
-    const [flipped, setFlipped] = useState<boolean>(false);
+export function Card({id, showFront, imgFront, imgBack, canFlip, CardClickEvent}: CardProps): JSX.Element {
+    const imgSrc = showFront ? imgFront : imgBack;
 
-    const [isFlippable, setIsFlippable] = useState(flippable);
-
-    const onClickEvent: React.MouseEventHandler<HTMLImageElement> = (e:React.MouseEvent) => { 
-        if (isFlippable) {
-            setFlipped((prevflipped) => !prevflipped);
-            setIsFlippable(false);
-            onFlipEvent(cardId, flipped);
-        }
+    const ClickEventHandler: React.MouseEventHandler<HTMLImageElement> = (e: React.MouseEvent) => { 
+        CardClickEvent(id);
     };
 
-    if (flip) {
-        setFlipped((prevflipped) => !prevflipped);
-        flip = false;
-    }
-
-    const imgSrc = (flipped) ? imgFront : imgBack;
-
-    
     return (
-        <img className="card" src={imgSrc} alt={name + "avatar image"} onClick={onClickEvent} />
+        <img className="card" src={imgSrc} alt={"card image"} onClick={canFlip ? ClickEventHandler : undefined} />
     )
 }
