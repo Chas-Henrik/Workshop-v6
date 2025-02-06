@@ -1,8 +1,19 @@
+*::before,
+*::after,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .card-container {
+    width: fit-content;
     margin: 2rem auto;
-    width: 80%;
+    padding: 1rem;
     display: grid;
     grid-template-columns: repeat(4, minmax(200px, 1fr));
-    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    row-gap: 1rem;
     background-color: blue;
 }

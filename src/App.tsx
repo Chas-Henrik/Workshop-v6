@@ -1,13 +1,12 @@
 import './App.css'
-import Card from './components/Card'
+import Board from './components/Board'
 
 
 function App() {
-  const handleCardClick = (e: React.MouseEvent<HTMLImageElement>) => console.log(e.target);
 
   return (
     <>
-      <Card id={0} onClickEvent={handleCardClick}/>
+      <Board dummy=""/>
     </>
   )
 }
