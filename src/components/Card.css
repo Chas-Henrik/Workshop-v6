@@ -1,0 +1,10 @@
+.card {
+    width: 12rem;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    border-shadow: 5px 5px 10px 0px #00000033;
+}
