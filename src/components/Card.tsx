@@ -3,18 +3,18 @@ import React, { JSX, useState } from 'react';
 
 export type CardProps = {
     id: number;
+    imgFront: string;
     onClickEvent: React.MouseEventHandler<HTMLImageElement>;
 };
 
 
-function Card({id, onClickEvent}: CardProps): JSX.Element {
+export function Card({id, imgFront, onClickEvent}: CardProps): JSX.Element {
     const imgBack = "/background.jpg";
     const [flipped, setFlipped] = useState(false);
     const [isFlippable, setIsFlippable] = useState(true);
 
+    const imgSrc = (flipped) ? imgFront : imgBack;
     return (
-        <img className="card" src={imgBack} alt={name + "avatar image"} onClick={onClickEvent} />
+        <img className="card" src={imgSrc} alt={name + "avatar image"} onClick={onClickEvent} />
     )
 }
-
-export default Card

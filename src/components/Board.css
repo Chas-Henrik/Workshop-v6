@@ -1,0 +1,8 @@
+.card-container {
+    margin: 2rem auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 1rem;
+    background-color: blue;
+}
