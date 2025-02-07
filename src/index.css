@@ -35,6 +35,10 @@
   :root {
       font-size: calc(1.25 * 62.5%);
   }
+
+  .grid-container {
+    grid-template-columns: repeat(4, minmax(auto, 1fr));
+  }
 }
 
 /* On screens that are 1024px or more (Medium & Large Desktops) */
@@ -43,6 +47,10 @@
   /*** Header ***/
   :root {
       font-size: calc(1.5 * 62.5%);
+  }
+  
+  .grid-container {
+    grid-template-columns: repeat(4, minmax(auto, 1fr));
   }
 }
 
