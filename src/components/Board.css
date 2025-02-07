@@ -6,14 +6,29 @@
     box-sizing: border-box;
 }
 
-.card-container {
+.grid-container {
     width: fit-content;
     margin: 2rem auto;
     padding: 1rem;
     display: grid;
-    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
     justify-items: center;
     align-items: center;
-    row-gap: 1rem;
+    gap: 1rem;
     background-color: blue;
+}
+
+
+/* On screens that are 650px to 1024px (Tablets & Small Desktops) */
+@media (max-width: 1024px) and (min-width: 650px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(auto, 1fr));
+    }
+}
+
+/* On screens that are 1024px or more (Medium & Large Desktops) */
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(4, minmax(auto, 1fr));
+    }
 }

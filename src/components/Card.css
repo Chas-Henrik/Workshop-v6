@@ -1,11 +1,39 @@
-.card {
-    margin: 0;
+.card-container {
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    perspective: 60rem;
+}
+
+.card-container-inner {
+    position: relative;
+    max-width: 12rem;
+    width: 12rem;
+    max-height: 12rem;
+    height: 12rem;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.card-container-inner.is-flipped {
+    transform: rotateY(-180deg);
+}
+
+.card-front-frame, .card-back-frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-front-frame {
+    transform: rotateY(-180deg);
+}
+
+.image {
     width: 12rem;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     padding: 1rem;
     background-color: white;
-    border-radius: 10px;
-    border: 2px solid #ccc;
-    border-shadow: 5px 5px 10px 0px #00000033;
 }
