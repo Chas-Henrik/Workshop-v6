@@ -81,7 +81,7 @@ function Board() {
     const cardElements = cardObjects.map((card: CardProps) => <Card key={card.id} id={card.id} showFront={card.showFront} imgFront={card.imgFront} imgBack={card.imgBack} canFlip={card.canFlip} CardClickEvent={card.CardClickEvent} />);
 
     return (
-        <article className="card-container">
+        <article className="grid-container">
             {cardElements}
         </article>
     )

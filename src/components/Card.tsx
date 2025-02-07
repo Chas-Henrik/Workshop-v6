@@ -12,13 +12,22 @@ export type CardProps = {
 
 
 export function Card({id, showFront, imgFront, imgBack, canFlip, CardClickEvent}: CardProps): JSX.Element {
-    const imgSrc = showFront ? imgFront : imgBack;
+    const cardContainerClasses = showFront ? "card-container-inner is-flipped" : "card-container-inner";
 
     const ClickEventHandler: React.MouseEventHandler<HTMLImageElement> = () => { 
         CardClickEvent(id);
     };
 
     return (
-        <img className="card" src={imgSrc} alt={"card image"} onClick={canFlip ? ClickEventHandler : undefined} />
+        <div className="card-container">
+            <div className={cardContainerClasses}>
+                <div className="card-front-frame">
+                    <img className="image" src={imgFront} alt={"card image"} onClick={canFlip ? ClickEventHandler : undefined} />
+                </div>
+                <div className="card-back-frame">
+                    <img className="image" src={imgBack} alt={"card image"} onClick={canFlip ? ClickEventHandler : undefined} />
+                </div>
+            </div>
+        </div>
     )
 }
